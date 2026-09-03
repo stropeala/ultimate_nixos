@@ -1,7 +1,7 @@
 { inputs, ... }: {
   #========  PLASMA MANAGER
-  flake.homeManagerModules.plasmaManager = { pkgs, ... }: {
-    imports = [ inputs.plasma-manager.homeManagerModules.plasma-manager ];
+  flake.homeModules.plasmaManager = { pkgs, ... }: {
+    imports = [ inputs.plasma-manager.homeModules.plasma-manager ];
 
     programs.plasma = {
       enable = true;

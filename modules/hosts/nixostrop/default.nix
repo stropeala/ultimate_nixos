@@ -28,7 +28,7 @@
       ({ ... }: {
         home-manager.users.nixostrop = {
           home.stateVersion = "26.05";
-          imports = with self.homeManagerModules; [ plasmaManager ];
+          imports = with self.homeModules; [ plasmaManager ];
         };
       })
     ];

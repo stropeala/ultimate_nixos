@@ -24,6 +24,7 @@
 
     #========  DOTFILES
     # Zed
+    # sudo chown -R nixostrop:users /etc/nixos
     system.activationScripts.nixostropDotfilesZed.text =
       let
         zedThemes = ../../features/zed/themes;
@@ -34,7 +35,7 @@
         install -D -m644 -o nixostrop -g users ${zedThemes}/custom-catppuccin-mocha_v1.json /home/nixostrop/.config/zed/themes/custom-catppuccin-mocha_v1.json
         install -D -m644 -o nixostrop -g users ${zedThemes}/custom-catppuccin-mocha_v2.json /home/nixostrop/.config/zed/themes/custom-catppuccin-mocha_v2.json
         install -D -m644 -o nixostrop -g users ${zedThemes}/custom-catppuccin-mocha_v3.json /home/nixostrop/.config/zed/themes/custom-catppuccin-mocha_v3.json
-        install -D -m644 -o nixostrop -g users ${./nixostrop_zed_settings.jsonc} /home/nixostrop/.config/zed/settings.jsonc
+        install -D -m644 -o nixostrop -g users ${./nixostrop_zed_settings.json} /home/nixostrop/.config/zed/settings.json
       '';
 
     # ProtonVPN
@@ -56,7 +57,7 @@
       ram
       position=top-left
       toggle_hud=Shift_R+F12
-      fps_limit=59
+      fps_limit=143
       MANGOHUD_CONF
       chown nixostrop:users /home/nixostrop/.config/MangoHud/MangoHud.conf
     '';

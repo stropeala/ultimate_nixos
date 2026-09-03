@@ -41,6 +41,9 @@
       [commit]
         gpgsign = true
 
+      [safe]
+        directory = /etc/nixos
+
       [alias]
         s = status --short --branch
         l = log --graph --oneline --decorate

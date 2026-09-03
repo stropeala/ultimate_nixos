@@ -24,6 +24,7 @@
 
     #========  DOTFILES
     # Zed
+    # sudo chown -R lapstrop:users /etc/nixos
     system.activationScripts.lapstropDotfilesZed.text =
       let
         zedThemes = ../../features/zed/themes;
@@ -34,7 +35,7 @@
         install -D -m644 -o lapstrop -g users ${zedThemes}/custom-catppuccin-mocha_v1.json /home/lapstrop/.config/zed/themes/custom-catppuccin-mocha_v1.json
         install -D -m644 -o lapstrop -g users ${zedThemes}/custom-catppuccin-mocha_v2.json /home/lapstrop/.config/zed/themes/custom-catppuccin-mocha_v2.json
         install -D -m644 -o lapstrop -g users ${zedThemes}/custom-catppuccin-mocha_v3.json /home/lapstrop/.config/zed/themes/custom-catppuccin-mocha_v3.json
-        install -D -m644 -o lapstrop -g users ${./lapstrop_zed_settings.jsonc} /home/lapstrop/.config/zed/settings.jsonc
+        install -D -m644 -o lapstrop -g users ${./lapstrop_zed_settings.json} /home/lapstrop/.config/zed/settings.json
       '';
 
     # ProtonVPN
