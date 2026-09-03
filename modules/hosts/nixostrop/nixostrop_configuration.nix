@@ -1,7 +1,7 @@
 { ... }: {
   #========  NIXOSTROP SPECIFIC CONFIG (shared config in in default.nix)
   flake.nixosModules.nixostropConfiguration = { pkgs, ... }: {
-    imports = [ ./nixostrop_hardware.nix ];
+    imports = [ ./_nixostrop_hardware.nix ];
 
     networking.hostName = "nixostrop";
 

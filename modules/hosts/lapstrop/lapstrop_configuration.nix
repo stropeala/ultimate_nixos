@@ -1,7 +1,7 @@
 { ... }: {
   #========  LAPSTROP SPECIFIC CONFIG (shared config in in default.nix)
   flake.nixosModules.lapstropConfiguration = { pkgs, ... }: {
-    imports = [ ./lapstrop_hardware.nix ];
+    imports = [ ./_lapstrop_hardware.nix ];
 
     networking.hostName = "lapstrop";
 
