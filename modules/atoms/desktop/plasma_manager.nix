@@ -40,7 +40,7 @@ in
 
   #========  HOME-MANAGER module
   flake.homeModules.plasma_desktop =
-    { pkgs, lib, ... }:
+    { pkgs, ... }:
     let
       catppuccin_kde = pkgs.fetchFromGitHub {
         owner = "catppuccin";
