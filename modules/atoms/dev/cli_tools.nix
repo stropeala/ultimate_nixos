@@ -1,35 +1,50 @@
 #========  CLI TOOLS
-{ ... }:
+{ self, ... }:
 {
   flake.nixosModules.cli_tools =
-    { pkgs, ... }:
+    { config, pkgs, ... }:
     {
-      # auto loads & unloads .envrc when you cd in and out
-      programs.direnv = {
-        enable = true;
-        nix-direnv.enable = true;
-      };
-
       environment.systemPackages = with pkgs; [
         fd # faster find
         ripgrep # faster grep
         dust # faster du
         duf # faster df
         jaq # faster jq
-        eza # nicer ls
-        bat # nicer cat
-        skim # fuzzy finder backed by ripgrep
-        zoxide # "z <partial-dir>" jumps to your most-used match
-
       ];
 
-      programs.fish.interactiveShellInit = ''
-        zoxide init fish | source
-        alias ls "eza --icons"
-        alias ll "eza --icons -l --git"
-        alias lt "eza --icons --tree"
-      '';
+      home-manager.users.${config.my.user.name}.imports = [ self.homeModules.cli_tools ];
+    };
 
-      environment.variables.MANPAGER = "sh -c 'col -bx | bat -l man -p'";
+  flake.homeModules.cli_tools =
+    { ... }:
+    {
+      # nicer ls
+      # ls/ll/lt abbreviations
+      programs.eza = {
+        enable = true;
+        enableFishIntegration = true;
+        icons = "auto";
+        git = true;
+      };
+
+      # "z <partial-dir>" jumps to your most-used match
+      programs.zoxide = {
+        enable = true;
+        enableFishIntegration = true;
+      };
+
+      # nicer cat
+      programs.bat.enable = true;
+
+      # fuzzy finder
+      # ctrl+r history
+      # ctrl+t files
+      programs.skim = {
+        enable = true;
+        enableFishIntegration = true;
+        defaultCommand = "rg --files --hidden --follow --glob '!.git'";
+      };
+
+      home.sessionVariables.MANPAGER = "sh -c 'col -bx | bat -l man -p'";
     };
 }

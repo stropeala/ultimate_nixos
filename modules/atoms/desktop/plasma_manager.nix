@@ -79,6 +79,8 @@ in
         pkgs.catppuccin-cursors.mochaBlue
       ];
 
+      home.file."Pictures/Wallpapers/skyrim-night-wallpapers.png".source = wallpaper;
+
       xdg.dataFile."color-schemes/${color_scheme_name}.colors".source =
         "${catppuccin_kde}/generated/color-schemes/${color_scheme_name}.colors";
 
