@@ -28,7 +28,12 @@
           window_padding_width = 10;
           confirm_os_window_close = 0;
 
+          enable_audio_bell = false;
+
           cursor_shape = "beam";
+          cursor_trail = 1;
+          cursor_trail_start_threshold = 1;
+          cursor_trail_color = "#cba6f7";
           cursor_blink_interval = 0;
 
           tab_bar_style = "powerline";
