@@ -1,36 +1,32 @@
-{
-  self,
-  inputs,
-  ...
-}:
+#========  NIXOSTROP desktop (INTEL and NVIDIA)
+{ self, inputs, ... }:
 {
   flake.nixosConfigurations.nixostrop = inputs.nixpkgs.lib.nixosSystem {
     modules = with self.nixosModules; [
-      # Here we select which modules we want to install on this host
-      # Attributes bundles
-      defApps
-      development
-      gaming
+      #========  ADDITIONS
+      # needed just for tidal
+      flatpak
 
-      # Defaults
-      desktop
-      areofylFetch
+      # on trial
+      localsend
 
-      # Diffs
-      nvidiaDrivers
-      maxPerformance
-      nixostropConfiguration
+      #========  BUNDLES
+      default_apps
+      desktop_setup
+      dev_setup
+      gaming_setup
 
-      # Host platform
-      { nixpkgs.hostPlatform = "x86_64-linux"; }
+      #========  SYSTEM
+      core
 
-      # Home-manager
-      ({ ... }: {
-        home-manager.users.nixostrop = {
-          home.stateVersion = "26.05";
-          imports = with self.homeModules; [ plasmaManager ];
-        };
-      })
+      #========  DRIVERS
+      intel_drivers
+      nvidia_drivers
+      power_max_performance
+
+      #========  HOST SPECIFIC
+      ./_nixostrop_hardware.nix
+      nixostrop_configuration
     ];
   };
 }

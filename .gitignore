@@ -9,3 +9,6 @@ result-*
 **/.nixos-test-history
 
 # Me
+
+# nix-portable / validation scratch
+.nix-portable

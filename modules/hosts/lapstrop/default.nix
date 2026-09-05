@@ -1,38 +1,39 @@
-{
-  self,
-  inputs,
-  ...
-}:
+#========  LAPSTROP (ASUS laptop AMD APU)
+{ self, inputs, ... }:
 {
   flake.nixosConfigurations.lapstrop = inputs.nixpkgs.lib.nixosSystem {
     modules = with self.nixosModules; [
-      # Here we select which modules we want to install on this host
-      # Attributes bundles
-      defApps
-      development
-      gaming
-
-      # Defaults
-      desktop
-      areofylFetch
-
-      # Diffs
+      #========  ADDITIONS
+      # face unlock
       howdy
-      asusControl
-      ntsync
-      powerMonitor
-      lapstropConfiguration
 
-      # Host platform
-      { nixpkgs.hostPlatform = "x86_64-linux"; }
+      # needed just for tidal
+      flatpak
 
-      # Home-manager
-      ({ ... }: {
-        home-manager.users.lapstrop = {
-          home.stateVersion = "26.05";
-          imports = with self.homeModules; [ plasmaManager ];
-        };
-      })
+      # cool factor 3D Fetch
+      areofyl_fetch
+
+      # on trial
+      kde_connect
+      localsend
+
+      #========  BUNDLES
+      default_apps
+      desktop_setup
+      dev_setup
+      gaming_setup
+
+      #========  SYSTEM
+      core
+
+      #========  DRIVERS
+      amd_drivers
+      asus_control
+      power_auto_profile
+
+      #========  HOST SPECIFIC
+      ./_lapstrop_hardware.nix
+      lapstrop_configuration
     ];
   };
 }

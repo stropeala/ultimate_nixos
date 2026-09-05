@@ -19,6 +19,12 @@
       inputs.home-manager.follows = "home-manager";
     };
 
+    # Catppuccin nix
+    catppuccin = {
+      url = "github:catppuccin/nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     # Flatpak
     nix-flatpak.url = "github:gmodena/nix-flatpak/?ref=latest";
 
@@ -33,5 +39,7 @@
     import-tree.url = "github:vic/import-tree";
   };
 
+  # every nix file inside modules is discovered automatically by
+  # import-tree and merged by flake-parts.
   outputs = inputs: inputs.flake-parts.lib.mkFlake { inherit inputs; } (inputs.import-tree ./modules);
 }

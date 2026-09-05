@@ -1,16 +1,15 @@
-{ ... }: {
-  #========  BOOT
-  # Bootloader.
-  flake.nixosModules.bootloader = { ... }: {
-    boot = {
-      loader = {
-        systemd-boot.enable = true;
-        efi.canTouchEfiVariables = true;
+#========  BOOTLOADER
+{ ... }:
+{
+  flake.nixosModules.bootloader =
+    { ... }:
+    {
+      boot = {
+        loader = {
+          systemd-boot.enable = true;
+          efi.canTouchEfiVariables = true;
+        };
+        tmp.cleanOnBoot = true;
       };
-      tmp.cleanOnBoot = true;
-
-      # BBR
-      kernelModules = [ "tcp_bbr" ];
     };
-  };
 }
