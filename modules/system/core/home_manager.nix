@@ -1,7 +1,13 @@
 #========  HOME MANAGER
-{ inputs, ... }:
+{ inputs, lib, ... }:
 {
-  flake.nixosModules.home_manager =
+  options.flake.homeModules = lib.mkOption {
+    type = lib.types.lazyAttrsOf lib.types.deferredModule;
+    default = { };
+    description = "home-manager modules, contributed by atoms.";
+  };
+
+  config.flake.nixosModules.home_manager =
     { config, ... }:
     {
       imports = [ inputs.home-manager.nixosModules.home-manager ];

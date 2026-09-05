@@ -10,9 +10,5 @@
         extraGroups = config.my.user.extra_groups;
         shell = pkgs.fish;
       };
-
-      programs.fish.interactiveShellInit = ''
-        fish_add_path "${config.my.user.home}/.local/bin"
-      '';
     };
 }
