@@ -42,10 +42,13 @@
           enable = true;
           control = "sufficient";
         };
+
+        # disable if bugs appear
         kde.howdy = {
           enable = true;
           control = "sufficient";
         };
+
         sddm.howdy = {
           enable = true;
           control = "sufficient";

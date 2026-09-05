@@ -8,7 +8,7 @@
 
       hardware.nvidia = {
         modesetting.enable = true;
-        powerManagement.enable = false;
+        powerManagement.enable = true;
         open = true; # supported for Ampere (RTX 3060 Ti)
         nvidiaSettings = true;
         package = config.boot.kernelPackages.nvidiaPackages.stable;
