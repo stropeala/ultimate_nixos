@@ -16,7 +16,7 @@
       # on trial
       kde_connect
       localsend
-      direnv
+      direnv_devenv
 
       #========  BUNDLES
       default_apps

@@ -91,6 +91,9 @@ in
       programs.plasma = {
         enable = true;
 
+        # spectacle shortcut
+        spectacle.shortcuts.captureRectangularRegion = "Ctrl+Alt+Q";
+
         overrideConfig = false;
         immutableByDefault = true;
 

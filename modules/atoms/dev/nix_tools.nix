@@ -10,9 +10,9 @@
         nixd
         nil
         nixfmt
+        nix-tree
         statix
         deadnix
-        devenv
       ];
     };
 }
