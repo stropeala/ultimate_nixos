@@ -7,17 +7,12 @@
       # face unlock
       howdy
 
-      # needed just for tidal
-      # flatpak
-
       # cool factor 3D Fetch
       areofyl_fetch
 
       # on trial
-      kde_connect
       localsend
       direnv_devenv
-      tidal_hifi
 
       #========  BUNDLES
       default_apps

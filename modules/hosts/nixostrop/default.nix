@@ -4,9 +4,6 @@
   flake.nixosConfigurations.nixostrop = inputs.nixpkgs.lib.nixosSystem {
     modules = with self.nixosModules; [
       #========  ADDITIONS
-      # needed just for tidal
-      flatpak
-
       # cool factor 3D Fetch
       areofyl_fetch
 

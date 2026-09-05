@@ -15,6 +15,7 @@
         # media
         haruna
         qbittorrent
+        tidal_hifi
         vlc
 
         # social
