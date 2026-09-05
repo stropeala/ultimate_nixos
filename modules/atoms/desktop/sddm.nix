@@ -32,7 +32,7 @@
             RememberLastUser = true;
             RememberLastSession = true;
           };
-          Theme.CursorTheme = "Catppuccin-Mocha-Blue-Cursors";
+          Theme.CursorTheme = "catppuccin-mocha-blue-cursors";
         };
       };
 

@@ -4,14 +4,21 @@ let
   # theme names
   flavor = "Mocha";
   accent = "Blue";
-  aurorae_style = "Modern"; # or "Classic"
+  aurorae_style = "Classic"; # or "Modern"
+
+  flavor_lower = "mocha";
+  accent_lower = "blue";
 
   color_scheme_name = "Catppuccin${flavor}${accent}";
   aurorae_theme_name = "Catppuccin${flavor}-${aurorae_style}";
-  cursor_theme_name = "Catppuccin-${flavor}-${accent}-Cursors";
+
+  cursor_theme_name = "catppuccin-${flavor_lower}-${accent_lower}-cursors";
   cursor_size = 24;
 
+  look_and_feel = "org.kde.breeze.desktop";
+
   wallpaper = ../../../data/wallpapers/skyrim-night-wallpapers.png;
+  avatar = ../../../data/avatar/yukikica.jpg;
 in
 {
   #========  NIXOS module
@@ -51,9 +58,11 @@ in
       catppuccin = {
         enable = true;
         autoEnable = false;
-        flavor = lib.toLower flavor;
-        accent = lib.toLower accent;
-        kvantum.enable = true;
+        flavor = flavor_lower;
+        accent = accent_lower;
+        kvantum.enable = false;
+        cursors.enable = true;
+        gtk.icon.enable = true;
       };
 
       gtk = {
@@ -61,25 +70,20 @@ in
         theme = {
           name = "Catppuccin-${flavor}-Standard-${accent}-Dark";
           package = pkgs.catppuccin-gtk.override {
-            accents = [ (lib.toLower accent) ];
+            accents = [ accent_lower ];
             size = "standard";
-            variant = lib.toLower flavor;
+            variant = flavor_lower;
           };
         };
       };
 
-      home.packages = [
-        pkgs.kdePackages.qtstyleplugin-kvantum
-
-        (pkgs.catppuccin-papirus-folders.override {
-          flavor = lib.toLower flavor;
-          accent = lib.toLower accent;
-        })
-
-        pkgs.catppuccin-cursors.mochaBlue
-      ];
+      qt = {
+        enable = true;
+        platformTheme.name = "kde";
+      };
 
       home.file."Pictures/Wallpapers/skyrim-night-wallpapers.png".source = wallpaper;
+      home.file."Pictures/Avatars/yukikica.jpg".source = avatar;
 
       xdg.dataFile."color-schemes/${color_scheme_name}.colors".source =
         "${catppuccin_kde}/generated/color-schemes/${color_scheme_name}.colors";
@@ -93,28 +97,56 @@ in
 
         # spectacle shortcut
         spectacle.shortcuts.captureRectangularRegion = "Ctrl+Alt+Q";
+        # disable konsole shortcut
+        shortcuts."services/org.kde.konsole.desktop"._launch = [ ];
+        # kitty shortcut
+        hotkeys.commands.launch-kitty = {
+          name = "Launch Kitty";
+          key = "Ctrl+Alt+T";
+          command = "kitty";
+        };
 
         overrideConfig = false;
         immutableByDefault = true;
 
+        resetFiles = [ "kscreenlockerrc" ];
+
         # appearance
         workspace = {
-          theme = "breeze-dark";
-          colorScheme = color_scheme_name;
-          iconTheme = "Papirus-Dark";
+          # plasma style
+          theme = "breeze";
 
+          # colors
+          colorScheme = color_scheme_name;
+
+          # icons
+          iconTheme = "Papirus-Dark"; # catppuccin
+          # iconTheme = "breeze-dark"; # kde default
+
+          # application style
+          widgetStyle = "Breeze";
+
+          # cursor
           cursor = {
             theme = cursor_theme_name;
             size = cursor_size;
           };
 
+          # window decorations
           windowDecorations = {
-            library = "org.kde.kwin.aurorae";
-            theme = "__aurorae__svg__${aurorae_theme_name}";
+            # catppuccin
+            # library = "org.kde.kwin.aurorae.v2"
+            # theme = "__aurorae__svg__${aurorae_theme_name}"
+
+            # default
+            library = "org.kde.breeze";
+            theme = "Breeze";
           };
 
-          widgetStyle = "kvantum";
-          splashScreen.theme = "None";
+          # splash screen
+          splashScreen.theme = "org.kde.breeze.desktop";
+
+          # system sounds
           soundTheme = "freedesktop";
 
           inherit wallpaper;
@@ -140,8 +172,18 @@ in
             };
           };
 
-        # lock screen wallpaper
-        kscreenlocker.appearance.wallpaper = wallpaper;
+        # lock screen
+        kscreenlocker = {
+          autoLock = true;
+          timeout = 60;
+          lockOnResume = true;
+          passwordRequired = true;
+          passwordRequiredDelay = 5;
+          appearance = {
+            alwaysShowClock = true;
+            wallpaper = wallpaper;
+          };
+        };
 
         # window decoration buttons
         kwin.titlebarButtons = {
@@ -153,10 +195,21 @@ in
           ];
         };
 
-        # blur & contrast
-        configFile.kwinrc.Plugins = {
-          blurEnabled = true;
-          contrastEnabled = true;
+        configFile = {
+          kdeglobals.General = {
+            accentColorFromWallpaper = false;
+            TerminalApplication = "kitty";
+          };
+
+          kdeglobals.KDE.LookAndFeelPackage = look_and_feel;
+          kscreenlockerrc.Greeter.Theme = look_and_feel;
+
+          kwinrc.Plugins = {
+            blurEnabled = true;
+            contrastEnabled = true;
+          };
+
+          kwinrc.TabBox.LayoutName = "org.kde.breeze";
         };
       };
     };
