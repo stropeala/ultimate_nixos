@@ -4,6 +4,7 @@
   inputs = {
     #========  SYSTEM
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-26.05";
+    nixpkgs_unstable.url = "github:NixOS/nixpkgs/nixos-unstable";
 
     #========  APPS
     # Home Manager

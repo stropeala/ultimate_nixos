@@ -141,6 +141,22 @@
         "type": "github"
       }
     },
+    "nixpkgs_unstable": {
+      "locked": {
+        "lastModified": 1788531059,
+        "narHash": "sha256-hLD4l3QOGBQhkVp3mQ2lJ/YbEi99qUgKapb40KovZ88=",
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "801bef6abd86b91e51083066b83fb354a11fc640",
+        "type": "github"
+      },
+      "original": {
+        "owner": "NixOS",
+        "ref": "nixos-unstable",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
     "plasma-manager": {
       "inputs": {
         "home-manager": [
@@ -173,6 +189,7 @@
         "import-tree": "import-tree",
         "nix-flatpak": "nix-flatpak",
         "nixpkgs": "nixpkgs",
+        "nixpkgs_unstable": "nixpkgs_unstable",
         "plasma-manager": "plasma-manager"
       }
     }
