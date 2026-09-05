@@ -7,8 +7,12 @@
       # needed just for tidal
       flatpak
 
+      # cool factor 3D Fetch
+      areofyl_fetch
+
       # on trial
       localsend
+      direnv
 
       #========  BUNDLES
       default_apps
