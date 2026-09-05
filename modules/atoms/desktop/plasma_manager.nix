@@ -68,8 +68,6 @@ in
       gtk = {
         enable = true;
         gtk2.force = true;
-        gtk3.force = true;
-        gtk4.force = true;
         theme = {
           name = "Catppuccin-${flavor}-Standard-${accent}-Dark";
           package = pkgs.catppuccin-gtk.override {
@@ -79,6 +77,8 @@ in
           };
         };
       };
+      xdg.configFile."gtk-3.0/settings.ini".force = true;
+      xdg.configFile."gtk-4.0/settings.ini".force = true;
 
       qt = {
         enable = true;
