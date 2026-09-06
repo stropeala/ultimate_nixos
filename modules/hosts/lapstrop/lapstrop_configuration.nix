@@ -33,7 +33,7 @@
         ];
       };
 
-      fileSystems."/mnt/PROTONDRIVE30" = {
+      fileSystems."/mnt/HDD30" = {
         device = "/dev/disk/by-uuid/26BA51A8BA517571";
         fsType = "ntfs";
         options = [
