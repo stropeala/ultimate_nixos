@@ -116,6 +116,9 @@ in
 
         # appearance
         workspace = {
+          # wallpaper
+          wallpaper = wallpaper;
+
           # plasma style
           theme = "breeze";
 
@@ -151,8 +154,6 @@ in
 
           # system sounds
           soundTheme = "freedesktop";
-
-          inherit wallpaper;
         };
 
         # fonts
