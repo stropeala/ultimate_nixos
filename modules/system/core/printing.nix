@@ -6,10 +6,10 @@
     {
       services.printing.enable = true;
       services.avahi = {
-        enable = true;
+        enable = false; # change to true if needed for compatible printer
         nssmdns4 = true;
         openFirewall = true;
       };
-      services.ipp-usb.enable = true;
+      services.ipp-usb.enable = false; # change to true if needed for compatible printer
     };
 }
