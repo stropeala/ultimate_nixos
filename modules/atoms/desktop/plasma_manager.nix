@@ -178,7 +178,7 @@ in
         # lock screen
         kscreenlocker = {
           autoLock = true;
-          timeout = 60;
+          timeout = 30;
           lockOnResume = true;
           passwordRequired = true;
           passwordRequiredDelay = 5;

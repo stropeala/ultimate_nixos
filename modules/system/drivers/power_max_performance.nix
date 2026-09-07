@@ -25,10 +25,7 @@
         powerButtonAction = "showLogoutScreen";
         autoSuspend.action = "nothing";
         dimDisplay.enable = false;
-        turnOffDisplay = {
-          idleTimeout = 1800;
-          idleTimeoutWhenLocked = 600;
-        };
+        turnOffDisplay.idleTimeout = "never";
       };
     };
 }

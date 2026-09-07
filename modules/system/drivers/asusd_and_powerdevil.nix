@@ -55,17 +55,17 @@
           powerButtonAction = "showLogoutScreen";
           autoSuspend = {
             action = "sleep";
-            idleTimeout = 1800;
+            idleTimeout = 7200;
           };
           whenSleepingEnter = "standby";
           whenLaptopLidClosed = "sleep";
-          inhibitLidActionWhenExternalMonitorConnected = false;
+          inhibitLidActionWhenExternalMonitorConnected = true;
           displayBrightness = 100;
           keyboardBrightness = 100;
-          dimDisplay.idleTimeout = 600;
+          dimDisplay.idleTimeout = 1800;
           turnOffDisplay = {
-            idleTimeout = 900;
-            idleTimeoutWhenLocked = 60;
+            idleTimeout = 3600;
+            idleTimeoutWhenLocked = 1800;
           };
         };
 
@@ -73,14 +73,15 @@
           powerButtonAction = "showLogoutScreen";
           autoSuspend = {
             action = "sleep";
-            idleTimeout = 900;
+            idleTimeout = 3600;
           };
           whenSleepingEnter = "standby";
           whenLaptopLidClosed = "sleep";
           inhibitLidActionWhenExternalMonitorConnected = false;
-          dimDisplay.idleTimeout = 300;
+          displayBrightness = 60;
+          dimDisplay.idleTimeout = 900;
           turnOffDisplay = {
-            idleTimeout = 600;
+            idleTimeout = 1800;
             idleTimeoutWhenLocked = 60;
           };
         };
@@ -89,15 +90,15 @@
           powerButtonAction = "showLogoutScreen";
           autoSuspend = {
             action = "sleep";
-            idleTimeout = 300;
+            idleTimeout = 900;
           };
           whenSleepingEnter = "standby";
           whenLaptopLidClosed = "sleep";
           inhibitLidActionWhenExternalMonitorConnected = false;
-          displayBrightness = 30;
-          dimDisplay.idleTimeout = 60;
+          displayBrightness = 25;
+          dimDisplay.idleTimeout = 300;
           turnOffDisplay = {
-            idleTimeout = 120;
+            idleTimeout = 480;
             idleTimeoutWhenLocked = 60;
           };
         };
