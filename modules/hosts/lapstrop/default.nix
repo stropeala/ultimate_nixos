@@ -25,7 +25,7 @@
 
       #========  DRIVERS
       amd_drivers
-      asus_control
+      asusd_and_powerdevil
 
       #========  HOST SPECIFIC
       ./_lapstrop_hardware.nix
