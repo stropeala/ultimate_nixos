@@ -26,7 +26,6 @@
       #========  DRIVERS
       amd_drivers
       asus_control
-      power_auto_profile
 
       #========  HOST SPECIFIC
       ./_lapstrop_hardware.nix
