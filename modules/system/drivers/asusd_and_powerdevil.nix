@@ -2,7 +2,7 @@
 { self, ... }:
 {
   #========  NIXOS module
-  flake.nixosModules.laptop_power =
+  flake.nixosModules.asusd_and_powerdevil =
     { config, ... }:
     {
       #========  ASUSD
