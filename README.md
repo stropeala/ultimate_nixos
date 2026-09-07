@@ -36,7 +36,19 @@ sudo nixos-rebuild switch --flake /etc/nixos#lapstrop
 nix flake check # evaluates and builds both hosts
 ```
 
-## Structure
+## Adding a host
+
+`modules/hosts/<name>/default.nix` lists modules and bundles
+`{name}_configuration.nix` holds the config and mounts
+`_{name}_hardware.nix` holds the hardware config
+
+I have an `empty_user` as an example
+
+## Theme
+
+Catppuccin Mocha with the blue accent everywhere
+
+## Structure (This probably won't be updated with every commit)
 
 ```
 data/                               static data
@@ -107,15 +119,3 @@ modules/
 
 flake.nix                           master flake
 ```
-
-## Adding a host
-
-`modules/hosts/<name>/default.nix` lists modules and bundles
-`{name}_configuration.nix` holds the config and mounts
-`_{name}_hardware.nix` holds the hardware config
-
-I have an `empty_user` as an example
-
-## Theme
-
-Catppuccin Mocha with the blue accent everywhere
