@@ -78,7 +78,7 @@
           whenSleepingEnter = "standby";
           whenLaptopLidClosed = "sleep";
           inhibitLidActionWhenExternalMonitorConnected = false;
-          displayBrightness = 60;
+          displayBrightness = 80;
           dimDisplay.idleTimeout = 900;
           turnOffDisplay = {
             idleTimeout = 1800;
