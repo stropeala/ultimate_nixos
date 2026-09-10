@@ -1,9 +1,0 @@
-#========  DEVENV
-{ ... }:
-{
-  flake.nixosModules.devenv =
-    { pkgs, ... }:
-    {
-      environment.systemPackages = [ pkgs.devenv ];
-    };
-}

@@ -12,7 +12,7 @@
 
       # on trial
       localsend
-      devenv
+      devenv_direnv
 
       #========  BUNDLES
       default_apps

@@ -87,6 +87,8 @@
   },
 
   //========  EDITOR
+  "load_direnv": "direct",
+
   "autosave": {
     "after_delay": {
       "milliseconds": 1000,

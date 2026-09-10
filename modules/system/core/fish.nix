@@ -52,9 +52,10 @@
         ];
 
         interactiveShellInit = ''
-          fastfetch
+          if not set -q DEVENV_ROOT
+            fastfetch
+          end
           fish_add_path "${config.home.homeDirectory}/.local/bin"
-          eval "$(devenv hook fish)"
         '';
       };
     };
