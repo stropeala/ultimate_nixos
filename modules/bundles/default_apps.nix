@@ -9,28 +9,29 @@
         brave
         firefox
 
-        # office
-        only_office
-
         # media
         haruna
         qbittorrent
         tidal_hifi
         vlc
 
-        # social
-        legcord
-        zapzap
+        # office
+        only_office
 
         # proton suite
         proton_mail
         proton_pass
         proton_vpn
 
+        # social
+        legcord
+        zapzap
+
         # utils
         bleachbit
         filelight
         gparted
+        sqlite_browser
       ];
     };
 }

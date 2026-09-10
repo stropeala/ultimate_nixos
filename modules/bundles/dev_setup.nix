@@ -10,7 +10,6 @@
         git
         kitty
         nix_tools
-        programming_languages
         zed
       ];
     };
