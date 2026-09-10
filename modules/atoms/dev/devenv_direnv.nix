@@ -1,14 +1,14 @@
 #========  DEVENV & DIRENV (just for zed integration)
 # devenv init --include-envrc
 # direnv allow
-{ self, ... }:
+{ self, inputs, ... }:
 {
   flake.nixosModules.devenv_direnv =
     { config, pkgs, ... }:
     {
-      environment.systemPackages = with pkgs; [
-        devenv
-        direnv
+      environment.systemPackages = [
+        inputs.nixpkgs_unstable.legacyPackages.${pkgs.stdenv.hostPlatform.system}.devenv
+        pkgs.direnv
       ];
 
       home-manager.users.${config.my.user.name}.imports = [ self.homeModules.devenv_direnv ];

@@ -51,10 +51,17 @@
           }
         ];
 
+        functions.damin_segment_direnv = ''
+          set -q DIRENV_DIR; or return
+          echo -n -s " " $_damin_c_sep $theme_damin_glyph_sep " " $_damin_c_dim "(direnv)" $_damin_c_normal
+        '';
+
         interactiveShellInit = ''
           if not set -q DEVENV_ROOT
             fastfetch
           end
+          set -g theme_damin_glyph_cwd ❥
+          set -g theme_damin_right_segments cwd direnv duration
           fish_add_path "${config.home.homeDirectory}/.local/bin"
         '';
       };

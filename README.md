@@ -30,8 +30,8 @@ That is how the generated hardware scans (`_{user}_hardware.nix`) stay out of th
 | `lapstrop`  | ASUS laptop (AMD APU)    | `lapstrop`  |
 
 ```bash
-sudo nixos-rebuild switch --flake /etc/nixos#nixostrop
-sudo nixos-rebuild switch --flake /etc/nixos#lapstrop
+sudo nixos-rebuild switch --flake /etc/nixos#nixostrop -L --show-trace
+sudo nixos-rebuild switch --flake /etc/nixos#lapstrop -L --show-trace
 
 nix flake check # evaluates and builds both hosts
 ```

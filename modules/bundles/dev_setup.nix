@@ -6,7 +6,7 @@
     {
       imports = with self.nixosModules; [
         cli_tools
-        databases
+        devenv_direnv
         git
         kitty
         nix_tools
