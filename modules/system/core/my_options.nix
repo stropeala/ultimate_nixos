@@ -50,16 +50,32 @@
           description = "zed scroll_sensitivity";
         };
 
-        mango_hud.fps_limit = lib.mkOption {
-          type = lib.types.int;
-          default = 59;
-          description = "mangoHud frame cap";
+        gaming = {
+          ntsync = lib.mkOption {
+            type = lib.types.bool;
+            default = false;
+            description = "ntsync kernel module, off by default";
+          };
+
+          mango_hud.fps_limit = lib.mkOption {
+            type = lib.types.int;
+            default = 59;
+            description = "mangoHud frame cap";
+          };
         };
 
-        gaming.ntsync = lib.mkOption {
-          type = lib.types.bool;
-          default = false;
-          description = "ntsync kernel module, off by default";
+        git = {
+          name = lib.mkOption {
+            type = lib.types.str;
+            default = "username";
+            description = "git user name";
+          };
+
+          email = lib.mkOption {
+            type = lib.types.str;
+            default = "user@email.com";
+            description = "git user email";
+          };
         };
       };
     };

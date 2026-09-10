@@ -9,9 +9,18 @@
 
       my = {
         user.name = "lapstrop";
+
+        git = {
+          name = "Petre Razvan";
+          email = "petre.ispir2002@protonmail.com";
+        };
+
         zed.scroll_sensitivity = 2.69;
-        mango_hud.fps_limit = 59;
-        gaming.ntsync = true;
+
+        gaming = {
+          ntsync = true;
+          mango_hud.fps_limit = 59;
+        };
       };
 
       #========  KERNEL

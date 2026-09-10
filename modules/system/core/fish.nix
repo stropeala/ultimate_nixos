@@ -54,6 +54,7 @@
         interactiveShellInit = ''
           fastfetch
           fish_add_path "${config.home.homeDirectory}/.local/bin"
+          eval "$(devenv hook fish)"
         '';
       };
     };

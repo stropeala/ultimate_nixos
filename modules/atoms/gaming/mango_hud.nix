@@ -1,6 +1,6 @@
 #========  MANGOHUD
 # frame cap differs per host
-# my.mango_hud.fps_limit = int
+# my.gaming.mango_hud.fps_limit = int
 # in host config
 { ... }:
 {
@@ -18,7 +18,7 @@
         ram
         position=top-left
         toggle_hud=Shift_R+F12
-        fps_limit=${toString config.my.mango_hud.fps_limit}
+        fps_limit=${toString config.my.gaming.mango_hud.fps_limit}
       '';
     in
     {

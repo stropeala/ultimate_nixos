@@ -9,9 +9,18 @@
 
       my = {
         user.name = "nixostrop";
+
+        git = {
+          name = "Petre Razvan";
+          email = "petre.ispir2002@protonmail.com";
+        };
+
         zed.scroll_sensitivity = 0.69;
-        mango_hud.fps_limit = 143;
-        gaming.ntsync = false;
+
+        gaming = {
+          ntsync = false;
+          mango_hud.fps_limit = 143;
+        };
       };
 
       #========  KERNEL
@@ -52,5 +61,12 @@
           "gid=100"
         ];
       };
+
+      swapDevices = [
+        {
+          device = "/swapfile";
+          size = 8 * 1024;
+        }
+      ];
     };
 }

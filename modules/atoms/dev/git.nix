@@ -2,7 +2,7 @@
 { ... }:
 {
   flake.nixosModules.git =
-    { pkgs, ... }:
+    { pkgs, config, ... }:
     {
       environment.systemPackages = with pkgs; [
         git
@@ -12,8 +12,9 @@
 
       environment.etc."gitconfig".text = ''
         [user]
-          name = Petre Razvan
-          email = petre.ispir2002@protonmail.com
+          name = ${toString config.my.git.name}
+          email = ${toString config.my.git.email}
+          # ssh-keygen -t ed25519 -C "git email"
           # Settings -> SSH and GPG keys -> New SSH key -> key type "Signing Key"
           signingkey = ~/.ssh/id_ed25519.pub
 

@@ -9,9 +9,18 @@
 
       my = {
         user.name = "empty_user";
-        zed.scroll_sensitivity = 2.69;
-        mango_hud.fps_limit = 59;
-        gaming.ntsync = false;
+
+        git = {
+          name = "git name";
+          email = "git@email.com";
+        };
+
+        zed.scroll_sensitivity = 1.00;
+
+        gaming = {
+          ntsync = false;
+          mango_hud.fps_limit = 59;
+        };
       };
 
       #========  KERNEL
