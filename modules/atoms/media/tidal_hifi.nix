@@ -1,4 +1,5 @@
 #========  TIDAL HIFI
+#========  UNSTABLE
 { inputs, ... }:
 {
   flake.nixosModules.tidal_hifi =

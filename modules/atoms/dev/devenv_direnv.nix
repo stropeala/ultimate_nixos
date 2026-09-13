@@ -1,4 +1,5 @@
 #========  DEVENV & DIRENV (direnv just for zed integration)
+#========  UNSTABLE (DEVENV)
 # devenv init --include-envrc
 # direnv allow
 { self, inputs, ... }:
