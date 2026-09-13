@@ -29,9 +29,11 @@
 
         # utils
         bleachbit
+        bottles
         filelight
         gparted
         sqlite_browser
+        wine
       ];
     };
 }
