@@ -8,6 +8,7 @@
         wine
         wine64
         winetricks
+        protontricks
         wineWow64Packages.stable
         freetype
       ];
