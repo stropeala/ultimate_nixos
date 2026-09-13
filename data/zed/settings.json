@@ -234,7 +234,7 @@
     "cursor_shape": "bar",
     "detect_venv": {
       "on": {
-        "directories": [".env", "env", ".venv", "venv"],
+        "directories": ["env", ".venv", "venv"],
         "activate_script": "default",
       },
     },
@@ -388,10 +388,6 @@
       },
     },
     "rust-analyzer": {
-      // "binary": {
-      //   "path": "/home/@user@/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/bin/rust-analyzer",
-      //   "arguments": [],
-      // },
       "initialization_options": {
         //   "cargo": {
         //     "features": ["hydrate"]
