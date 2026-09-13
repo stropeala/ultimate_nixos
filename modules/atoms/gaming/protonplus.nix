@@ -1,9 +1,11 @@
 #========  PROTON PLUS
-{ ... }:
+{ inputs, ... }:
 {
   flake.nixosModules.protonplus =
-    { pkgs, ... }:
+    { pkgs, config, ... }:
     {
-      environment.systemPackages = [ pkgs.protonplus ];
+      environment.systemPackages = [
+        inputs.nixpkgs_unstable.legacyPackages.${pkgs.stdenv.hostPlatform.system}.protonplus
+      ];
     };
 }

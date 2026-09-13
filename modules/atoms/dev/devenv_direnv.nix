@@ -1,4 +1,4 @@
-#========  DEVENV & DIRENV (just for zed integration)
+#========  DEVENV & DIRENV (direnv just for zed integration)
 # devenv init --include-envrc
 # direnv allow
 { self, inputs, ... }:
