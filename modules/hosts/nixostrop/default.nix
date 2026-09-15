@@ -9,6 +9,7 @@
 
       # on trial
       localsend
+      exfat
 
       #========  BUNDLES
       default_apps
