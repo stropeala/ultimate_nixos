@@ -32,6 +32,7 @@
         bottles
         filelight
         gparted
+        seven_z
         sqlite_browser
         wine
       ];
