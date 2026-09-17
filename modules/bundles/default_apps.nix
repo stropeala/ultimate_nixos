@@ -28,8 +28,8 @@
         zapzap
 
         # utils
+        binutils
         bleachbit
-        bottles
         filelight
         gparted
         seven_z

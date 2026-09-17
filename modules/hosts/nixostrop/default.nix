@@ -9,6 +9,7 @@
 
       # on trial
       localsend
+      bottles
       exfat
 
       #========  BUNDLES
