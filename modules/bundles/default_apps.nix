@@ -30,6 +30,8 @@
         # utils
         binutils
         bleachbit
+        e2fsprogs
+        exfat
         filelight
         gparted
         seven_z
