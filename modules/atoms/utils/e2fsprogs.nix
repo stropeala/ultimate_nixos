@@ -1,4 +1,5 @@
 #========  E2FSPROGS
+# sudo filefrag ~/dir/*.file_extention
 { ... }:
 {
   flake.nixosModules.e2fsprogs =
