@@ -10,6 +10,9 @@
         nerd-fonts.jetbrains-mono
         noto-fonts
         corefonts
+        mplus-outline-fonts.githubRelease
+        sarasa-gothic
+        (ibm-plex.override { families = [ "mono" ]; })
 
         # icons
         papirus-icon-theme

@@ -12,7 +12,7 @@
         # media
         haruna
         qbittorrent
-        tidal_hifi
+        tidal_hifi_UNSTABLE
         vlc
 
         # office
@@ -28,13 +28,9 @@
         zapzap
 
         # utils
-        binutils
         bleachbit
-        e2fsprogs
-        exfat
         filelight
         gparted
-        seven_z
         sqlite_browser
         wine
       ];

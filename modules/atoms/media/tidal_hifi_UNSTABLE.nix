@@ -2,7 +2,7 @@
 #========  UNSTABLE
 { inputs, ... }:
 {
-  flake.nixosModules.tidal_hifi =
+  flake.nixosModules.tidal_hifi_UNSTABLE =
     { pkgs, ... }:
     let
       pkgs_unstable = import inputs.nixpkgs_unstable {

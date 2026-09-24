@@ -4,7 +4,7 @@
 # direnv allow
 { self, inputs, ... }:
 {
-  flake.nixosModules.devenv_direnv =
+  flake.nixosModules.devenv_direnv_UNSTABLE =
     { config, pkgs, ... }:
     {
       environment.systemPackages = [

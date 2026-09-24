@@ -2,7 +2,7 @@
 #========  UNSTABLE
 { inputs, ... }:
 {
-  flake.nixosModules.protonplus =
+  flake.nixosModules.protonplus_UNSTABLE =
     { pkgs, ... }:
     {
       environment.systemPackages = [

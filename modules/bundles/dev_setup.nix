@@ -6,7 +6,7 @@
     {
       imports = with self.nixosModules; [
         cli_tools
-        devenv_direnv
+        devenv_direnv_UNSTABLE
         git
         kitty
         nix_tools
