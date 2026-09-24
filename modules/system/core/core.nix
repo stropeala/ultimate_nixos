@@ -46,20 +46,26 @@
       ];
 
       environment.systemPackages = with pkgs; [
-        # windows file system support
+        # file system support
+        # ntfs
         ntfs3g
-
-        # tar utilities
-        gnutar
-        xz
+        # exfat
+        exfatprogs
+        # sudo filefrag ~/dir_name/file_name.file_extention
+        e2fsprogs
 
         # compression utilities
         zstd
+        p7zip
+        gnutar
+        xz
 
         # system utilities
         fastfetch
         btop
         v4l-utils
+        p7zip
+        binutils
       ];
 
       hardware.enableRedistributableFirmware = true;
