@@ -233,12 +233,7 @@
     "shell": { "program": "fish" },
     "copy_on_select": true,
     "cursor_shape": "bar",
-    "detect_venv": {
-      "on": {
-        "directories": ["env", ".venv", "venv"],
-        "activate_script": "default",
-      },
-    },
+    "detect_venv":"off",
   },
 
   //========  PRIVACY
