@@ -15,7 +15,7 @@
         shellIntegration.enableFishIntegration = true;
 
         font = {
-          name = "JetBrainsMono Nerd Font";
+          name = "M PLUS Code Latin 60";
           size = 12.0;
         };
 
