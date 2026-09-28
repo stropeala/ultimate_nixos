@@ -29,6 +29,8 @@ in
 
       environment.systemPackages = [ pkgs.kdePackages.kate ];
 
+      environment.plasma6.excludePackages = [ pkgs.kdePackages.discover ];
+
       environment.sessionVariables = {
         XCURSOR_THEME = cursor_theme_name;
         XCURSOR_SIZE = toString cursor_size;
