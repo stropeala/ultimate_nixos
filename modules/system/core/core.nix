@@ -33,8 +33,8 @@
         printing
 
         # tweaks
-        system_tweaks
         storage_tweaks
+        system_tweaks
 
         # users
         users
@@ -64,7 +64,6 @@
         fastfetch
         btop
         v4l-utils
-        p7zip
         binutils
       ];
 

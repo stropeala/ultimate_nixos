@@ -1,4 +1,4 @@
-#========  SSH CLIENT
+#========  SSH
 # ssh-keygen -t ed25519 -C "petre.ispir2002@protonmail.com"
 { ... }:
 {

@@ -8,8 +8,7 @@
       areofyl_fetch
 
       # on trial
-      localsend
-      bottles
+      # ...
 
       #========  BUNDLES
       default_apps

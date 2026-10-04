@@ -31,6 +31,7 @@
         bleachbit
         filelight
         gparted
+        localsend
         sqlite_browser
         wine
       ];

@@ -27,7 +27,10 @@ in
     {
       services.desktopManager.plasma6.enable = true;
 
-      environment.systemPackages = [ pkgs.kdePackages.kate ];
+      environment.systemPackages = with pkgs; [
+        kdePackages.kate
+        kdePackages.kcalc
+      ];
 
       environment.plasma6.excludePackages = [ pkgs.kdePackages.discover ];
 

@@ -11,7 +11,7 @@
       areofyl_fetch
 
       # on trial
-      localsend
+      # ...
 
       #========  BUNDLES
       default_apps

@@ -21,7 +21,7 @@
         };
 
         gc = {
-          automatic = true;
+          automatic = false; # changed to false because plasma taskbar icons bug was annoying
           dates = "daily";
           options = "--delete-older-than 7d";
         };
