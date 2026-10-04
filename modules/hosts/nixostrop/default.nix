@@ -4,9 +4,6 @@
   flake.nixosConfigurations.nixostrop = inputs.nixpkgs.lib.nixosSystem {
     modules = with self.nixosModules; [
       #========  ADDITIONS
-      # cool factor 3D Fetch
-      areofyl_fetch
-
       # on trial
       # ...
 

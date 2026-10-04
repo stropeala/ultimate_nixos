@@ -7,9 +7,6 @@
       # face unlock
       howdy
 
-      # cool factor 3D Fetch
-      areofyl_fetch
-
       # on trial
       # ...
 
