@@ -2,7 +2,7 @@
 { ... }:
 {
   flake.nixosModules.nixostrop_configuration =
-    { ... }:
+    { config, ... }:
     {
       networking.hostName = "nixostrop";
       nixpkgs.hostPlatform = "x86_64-linux";
@@ -15,12 +15,24 @@
           email = "petre.ispir2002@protonmail.com";
         };
 
+        obsidian = {
+          vault = "OBSIDIAN";
+        };
+
         zed.scroll_sensitivity = 0.69;
 
         gaming = {
           ntsync = false;
           mango_hud.fps_limit = 143;
         };
+      };
+
+      #========  OBSIDIAN vault workaround
+      fileSystems."/home/${config.my.user.name}/OBSIDIAN" = {
+        device = "/mnt/NTFS150/OBSIDIAN";
+        fsType = "none";
+        options = [ "bind" ];
+        depends = [ "/mnt/NTFS150" ];
       };
 
       #========  KERNEL
@@ -40,7 +52,7 @@
         ];
       };
 
-      fileSystems."/mnt/HDD150" = {
+      fileSystems."/mnt/NTFS150" = {
         device = "/dev/disk/by-uuid/20823498823473FE";
         fsType = "ntfs";
         options = [

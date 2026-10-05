@@ -77,6 +77,15 @@
             description = "git user email";
           };
         };
+
+        obsidian = {
+          vault = lib.mkOption {
+            type = lib.types.str;
+            default = "OBSIDIAN";
+            description = "obsidian vault path";
+          };
+        };
+
       };
     };
 }

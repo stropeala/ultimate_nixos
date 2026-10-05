@@ -7,8 +7,8 @@
       # face unlock
       howdy
 
-      # on trial
-      # ...
+      # uni
+      obsidian
 
       #========  BUNDLES
       default_apps

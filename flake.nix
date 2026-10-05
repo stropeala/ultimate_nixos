@@ -26,14 +26,20 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    # Flatpak
-    nix-flatpak.url = "github:gmodena/nix-flatpak/?ref=latest";
-
-    # 3D Fetch
-    areofyl-fetch = {
-      url = "github:areofyl/fetch";
+    # Obsidian extensions, plugins and themes
+    obsidian-extensions = {
+      url = "github:karaolidis/nix-obsidian-extensions";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    # Flatpak
+    # nix-flatpak.url = "github:gmodena/nix-flatpak/?ref=latest";
+
+    # 3D Fetch
+    # areofyl-fetch = {
+    #   url = "github:areofyl/fetch";
+    #   inputs.nixpkgs.follows = "nixpkgs";
+    # };
 
     #========  FLAKE PARTS & IMPORT TREE
     flake-parts.url = "github:hercules-ci/flake-parts";

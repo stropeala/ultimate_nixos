@@ -4,8 +4,8 @@
   flake.nixosConfigurations.nixostrop = inputs.nixpkgs.lib.nixosSystem {
     modules = with self.nixosModules; [
       #========  ADDITIONS
-      # on trial
-      # ...
+      # uni
+      obsidian
 
       #========  BUNDLES
       default_apps
