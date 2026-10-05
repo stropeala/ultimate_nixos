@@ -27,10 +27,10 @@
     };
 
     # Obsidian extensions, plugins and themes
-    # obsidian-extensions = {
-    #   url = "github:karaolidis/nix-obsidian-extensions";
-    #   inputs.nixpkgs.follows = "nixpkgs";
-    # };
+    obsidian-extensions = {
+      url = "github:karaolidis/nix-obsidian-extensions";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
 
     # Flatpak
     # nix-flatpak.url = "github:gmodena/nix-flatpak/?ref=latest";

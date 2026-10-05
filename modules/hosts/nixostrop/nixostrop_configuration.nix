@@ -2,7 +2,7 @@
 { ... }:
 {
   flake.nixosModules.nixostrop_configuration =
-    { ... }:
+    { config, ... }:
     {
       networking.hostName = "nixostrop";
       nixpkgs.hostPlatform = "x86_64-linux";
@@ -21,6 +21,14 @@
           ntsync = false;
           mango_hud.fps_limit = 143;
         };
+      };
+
+      #========  OBSIDIAN vault workaround
+      fileSystems."/home/${config.my.user.name}/OBSIDIAN" = {
+        device = "/mnt/NTFS150/OBSIDIAN";
+        fsType = "none";
+        options = [ "bind" ];
+        depends = [ "/mnt/NTFS150" ];
       };
 
       #========  KERNEL
