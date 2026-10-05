@@ -1,4 +1,15 @@
 #========  OBSIDIAN
+# config.my.obsidian.vault
+# obsidian = {
+#   vault = "OBSIDIAN";
+# };
+# fileSystems."/home/${config.my.user.name}/OBSIDIAN" = {
+#   device = "/mnt/mounted_drive/OBSIDIAN";
+#   fsType = "none";
+#   options = [ "bind" ];
+#   depends = [ "/mnt/mounted_drive" ];
+# };
+# in host config
 { self, inputs, ... }:
 {
   flake.nixosModules.obsidian =

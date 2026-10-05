@@ -153,7 +153,6 @@
   //========  AI / AGENT
   "disable_ai": false,
   "agent": {
-    "sidebar_side": "right",
     "dock": "right",
 
     "default_model": {

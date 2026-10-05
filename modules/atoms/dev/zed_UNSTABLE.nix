@@ -1,14 +1,19 @@
 #========  ZED EDITOR
+#========  UNSTABLE
 # scroll sensitivity differs per host
 # my.zed.scroll_sensitivity = float
 # in host config
-{ ... }:
+{ inputs, ... }:
 {
-  flake.nixosModules.zed =
+  flake.nixosModules.zed_UNSTABLE =
     { config, pkgs, ... }:
     let
       user = config.my.user.name;
       home = config.my.user.home;
+
+      pkgs_unstable = import inputs.nixpkgs_unstable {
+        inherit (pkgs.stdenv.hostPlatform) system;
+      };
 
       settings = pkgs.writeText "zed-settings.json" (
         builtins.replaceStrings
@@ -21,7 +26,9 @@
       install = "install -D -m644 -o ${user} -g users";
     in
     {
-      environment.systemPackages = [ pkgs.zed-editor ];
+      environment.systemPackages = [
+        pkgs_unstable.zed-editor
+      ];
 
       system.activationScripts.zed_dotfiles = {
         deps = [ "users" ];
@@ -29,6 +36,7 @@
           ${install} ${../../../data/zed/keymap.json} ${home}/.config/zed/keymap.json
           ${install} ${../../../data/zed/tasks.json}  ${home}/.config/zed/tasks.json
           ${install} ${settings} ${home}/.config/zed/settings.json
+
           for theme in ${themes}/*.json; do
             ${install} "$theme" "${home}/.config/zed/themes/$(basename "$theme")"
           done

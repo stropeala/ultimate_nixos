@@ -10,7 +10,7 @@
         git
         kitty
         nix_tools
-        zed
+        zed_UNSTABLE
       ];
     };
 }
