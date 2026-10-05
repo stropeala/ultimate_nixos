@@ -121,27 +121,6 @@
         "type": "github"
       }
     },
-    "obsidian-extensions": {
-      "inputs": {
-        "nixpkgs": [
-          "nixpkgs"
-        ],
-        "treefmt-nix": "treefmt-nix"
-      },
-      "locked": {
-        "lastModified": 1791111382,
-        "narHash": "sha256-//Uqt8l1sV4w35IlKNN2r/KWYrNbNR/CKpuOKquoGrg=",
-        "owner": "karaolidis",
-        "repo": "nix-obsidian-extensions",
-        "rev": "f656e28db18e2875a8fc6fc6cbb534d9e76f4915",
-        "type": "github"
-      },
-      "original": {
-        "owner": "karaolidis",
-        "repo": "nix-obsidian-extensions",
-        "type": "github"
-      }
-    },
     "plasma-manager": {
       "inputs": {
         "home-manager": [
@@ -173,29 +152,7 @@
         "import-tree": "import-tree",
         "nixpkgs": "nixpkgs",
         "nixpkgs_unstable": "nixpkgs_unstable",
-        "obsidian-extensions": "obsidian-extensions",
         "plasma-manager": "plasma-manager"
-      }
-    },
-    "treefmt-nix": {
-      "inputs": {
-        "nixpkgs": [
-          "obsidian-extensions",
-          "nixpkgs"
-        ]
-      },
-      "locked": {
-        "lastModified": 1785360170,
-        "narHash": "sha256-XE1lKgQ3eIO3E7zWryqcRsax+mYXod/5RHBn4YaR9YE=",
-        "owner": "numtide",
-        "repo": "treefmt-nix",
-        "rev": "d1187f8bc71fb8aab02395869ec3f5c1920f75c0",
-        "type": "github"
-      },
-      "original": {
-        "owner": "numtide",
-        "repo": "treefmt-nix",
-        "type": "github"
       }
     }
   },

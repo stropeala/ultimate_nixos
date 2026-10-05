@@ -2,7 +2,7 @@
 { ... }:
 {
   flake.nixosModules.lapstrop_configuration =
-    { pkgs, config, ... }:
+    { pkgs, ... }:
     {
       networking.hostName = "lapstrop";
       nixpkgs.hostPlatform = "x86_64-linux";
@@ -15,24 +15,12 @@
           email = "petre.ispir2002@protonmail.com";
         };
 
-        obsidian = {
-          vault = "OBSIDIAN";
-        };
-
         zed.scroll_sensitivity = 2.69;
 
         gaming = {
           ntsync = true;
           mango_hud.fps_limit = 59;
         };
-      };
-
-      #========  OBSIDIAN vault workaround
-      fileSystems."/home/${config.my.user.name}/OBSIDIAN" = {
-        device = "/mnt/NTFS30/OBSIDIAN";
-        fsType = "none";
-        options = [ "bind" ];
-        depends = [ "/mnt/NTFS30" ];
       };
 
       #========  KERNEL
