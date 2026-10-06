@@ -12,6 +12,7 @@
 # in host config
 { self, inputs, ... }:
 {
+  #========  NIXOS module
   flake.nixosModules.obsidian =
     { config, ... }:
     {
@@ -23,25 +24,120 @@
       };
     };
 
+  #========  HOME-MANAGER module
   flake.homeModules.obsidian =
-    { pkgs, ... }:
+    {
+      config,
+      lib,
+      pkgs,
+      ...
+    }:
     {
       programs.obsidian = {
         enable = true;
-        defaultSettings = {
-          themes = with pkgs.obsidianThemes; [
-            catppuccin
-          ];
 
-          appearance = {
-            cssTheme = "Catppuccin";
-            theme = "obsidian";
+        defaultSettings = {
+          #====  app.json
+          app = {
+            newFileLocation = "root";
+            useMarkdownLinks = false; # [[wikilinks]]
+            alwaysUpdateLinks = true;
+            readableLineLength = true;
+            foldHeading = true;
+            foldIndent = true;
+            showUnsupportedFiles = false;
           };
 
-          communityPlugins = with pkgs.obsidianPlugins; [
-            obsidian-git
-            obsidian-excalidraw-plugin
+          #====  appearance.json
+          appearance = {
+            theme = "obsidian";
+            baseFontSize = 16;
+            accentColor = "#5699f0";
+          };
+
+          #====  themes
+          themes = [
+            {
+              pkg = pkgs.obsidianThemes.catppuccin;
+              enable = true;
+            }
+            {
+              pkg = pkgs.obsidianThemes.obsidianite;
+              enable = false;
+            }
           ];
+
+          #====  core plugins
+          corePlugins = [
+            "file-explorer"
+            "global-search"
+            "switcher"
+            "command-palette"
+            "slash-command"
+            "page-preview"
+            "backlink"
+            "outgoing-link"
+            "outline"
+            "tag-pane"
+            "properties"
+            "bookmarks"
+            "bases"
+            "canvas"
+            "graph"
+            "note-composer"
+            "footnotes"
+            "word-count"
+            "editor-status"
+            "file-recovery"
+            "workspaces"
+          ];
+
+          #====  community plugins
+          communityPlugins = with pkgs.obsidianPlugins; [
+            # git
+            obsidian-git
+
+            # diagrams
+            obsidian-excalidraw-plugin
+
+            # zed
+            {
+              pkg = open-in-zed;
+              settings = {
+                zedPath = lib.getExe config.programs.zed-editor.package;
+                zedAppName = "Zed";
+              };
+            }
+
+            # dataview, tasks, calendar, kanban
+            dataview
+            obsidian-tasks-plugin
+            obsidian-kanban
+
+            # reading & writing
+            pdf-plus
+            obsidian-latex-suite
+            table-editor-obsidian
+
+            # theme accent
+            {
+              pkg = obsidian-style-settings;
+              settings = {
+                "catppuccin-theme-settings@@catppuccin-theme-dark" = "ctp-mocha";
+                "catppuccin-theme-settings@@catppuccin-theme-accents" = "ctp-accent-blue";
+              };
+            }
+          ];
+
+          #====  hotkeys
+          hotkeys = {
+            "open-in-zed:open-vault-in-zed" = [
+              {
+                modifiers = [ "Alt" ];
+                key = "Z";
+              }
+            ];
+          };
         };
       };
     };
