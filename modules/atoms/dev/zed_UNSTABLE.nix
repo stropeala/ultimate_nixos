@@ -3,17 +3,12 @@
 # scroll sensitivity differs per host
 # my.zed.scroll_sensitivity = float
 # in host config
-{ inputs, ... }:
+{ ... }:
 {
   flake.nixosModules.zed_UNSTABLE =
     { config, pkgs, ... }:
     let
       user = config.my.user.name;
-      home = config.my.user.home;
-
-      pkgs_unstable = import inputs.nixpkgs_unstable {
-        inherit (pkgs.stdenv.hostPlatform) system;
-      };
 
       settings = pkgs.writeText "zed-settings.json" (
         builtins.replaceStrings
@@ -23,24 +18,23 @@
       );
 
       themes = ../../../data/zed/themes;
-      install = "install -D -m644 -o ${user} -g users";
     in
     {
-      environment.systemPackages = [
-        pkgs_unstable.zed-editor
-      ];
+      environment.systemPackages = [ pkgs.unstable.zed-editor ];
 
-      system.activationScripts.zed_dotfiles = {
-        deps = [ "users" ];
-        text = ''
-          ${install} ${../../../data/zed/keymap.json} ${home}/.config/zed/keymap.json
-          ${install} ${../../../data/zed/tasks.json}  ${home}/.config/zed/tasks.json
-          ${install} ${settings} ${home}/.config/zed/settings.json
+      home-manager.users.${user} =
+        { lib, ... }:
+        {
+          home.activation.zed_dotfiles = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
+            run rm -rf "$HOME/.config/zed/themes"
+            run install -D -m644 ${../../../data/zed/keymap.json} "$HOME/.config/zed/keymap.json"
+            run install -D -m644 ${../../../data/zed/tasks.json}  "$HOME/.config/zed/tasks.json"
+            run install -D -m644 ${settings} "$HOME/.config/zed/settings.json"
 
-          for theme in ${themes}/*.json; do
-            ${install} "$theme" "${home}/.config/zed/themes/$(basename "$theme")"
-          done
-        '';
-      };
+            for theme in ${themes}/*.json; do
+              run install -D -m644 "$theme" "$HOME/.config/zed/themes/$(basename "$theme")"
+            done
+          '';
+        };
     };
 }

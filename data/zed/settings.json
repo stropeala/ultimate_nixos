@@ -344,6 +344,9 @@
     "TOML": {
       "format_on_save": "on",
     },
+    "Nix": {
+      "format_on_save": "on"
+    }
   },
 
   //========  LSP

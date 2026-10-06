@@ -2,16 +2,12 @@
 #========  UNSTABLE (DEVENV)
 # devenv init --include-envrc
 # direnv allow
-{ self, inputs, ... }:
+{ self, ... }:
 {
   flake.nixosModules.devenv_direnv_UNSTABLE =
     { config, pkgs, ... }:
     {
-      environment.systemPackages = [
-        inputs.nixpkgs_unstable.legacyPackages.${pkgs.stdenv.hostPlatform.system}.devenv
-        pkgs.direnv
-      ];
-
+      environment.systemPackages = [ pkgs.unstable.devenv ];
       home-manager.users.${config.my.user.name}.imports = [ self.homeModules.devenv_direnv ];
     };
 
