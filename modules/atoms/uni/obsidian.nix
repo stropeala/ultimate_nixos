@@ -37,7 +37,7 @@
         enable = true;
 
         defaultSettings = {
-          #====  app.json
+          #====  app
           app = {
             newFileLocation = "root";
             useMarkdownLinks = false; # [[wikilinks]]
@@ -48,7 +48,7 @@
             showUnsupportedFiles = false;
           };
 
-          #====  appearance.json
+          #====  appearance
           appearance = {
             theme = "obsidian";
             baseFontSize = 16;
@@ -118,6 +118,7 @@
             pdf-plus
             obsidian-latex-suite
             table-editor-obsidian
+            native-powerpoint-doc-editor
 
             # theme accent
             {
@@ -129,7 +130,7 @@
             }
           ];
 
-          #====  hotkeys
+          # hotkeys
           hotkeys = {
             "open-in-zed:open-vault-in-zed" = [
               {
