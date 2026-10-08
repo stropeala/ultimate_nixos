@@ -28,7 +28,7 @@
 
         # nixos
         nixos_settings
-        nixpkgs_unstable_overlay
+        nixpkgs_overlay_UNSTABLE
 
         # printing
         printing

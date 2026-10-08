@@ -1,5 +1,5 @@
 #========  DEVENV & DIRENV (direnv just for zed integration)
-#========  UNSTABLE (DEVENV)
+#========  UNSTABLE (just for devenv)
 # devenv init --include-envrc
 # direnv allow
 { self, ... }:
@@ -7,7 +7,7 @@
   flake.nixosModules.devenv_direnv_UNSTABLE =
     { config, pkgs, ... }:
     {
-      environment.systemPackages = [ pkgs.unstable.devenv ];
+      environment.systemPackages = [ pkgs.UNSTABLE.devenv ];
       home-manager.users.${config.my.user.name}.imports = [ self.homeModules.devenv_direnv ];
     };
 

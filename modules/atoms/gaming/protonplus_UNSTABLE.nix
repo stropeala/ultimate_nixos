@@ -5,6 +5,6 @@
   flake.nixosModules.protonplus_UNSTABLE =
     { pkgs, ... }:
     {
-      environment.systemPackages = [ pkgs.unstable.protonplus ];
+      environment.systemPackages = [ pkgs.UNSTABLE.protonplus ];
     };
 }

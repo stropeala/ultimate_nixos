@@ -30,6 +30,16 @@
         nixPath = [ "nixpkgs=${inputs.nixpkgs}" ];
       };
 
+      # alternative gc
+      programs.nh = {
+        enable = true;
+        clean = {
+          enable = true;
+          dates = "weekly";
+          extraArgs = "--keep 3";
+        };
+      };
+
       systemd.tmpfiles.rules = [
         "Z /etc/nixos - ${config.my.user.name} users -"
       ];

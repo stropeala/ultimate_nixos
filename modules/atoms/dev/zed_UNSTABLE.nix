@@ -20,7 +20,7 @@
       themes = ../../../data/zed/themes;
     in
     {
-      environment.systemPackages = [ pkgs.unstable.zed-editor ];
+      environment.systemPackages = [ pkgs.UNSTABLE.zed-editor ];
 
       home-manager.users.${user} =
         { lib, ... }:

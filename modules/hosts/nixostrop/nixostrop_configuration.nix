@@ -2,7 +2,7 @@
 { ... }:
 {
   flake.nixosModules.nixostrop_configuration =
-    { config, ... }:
+    { pkgs, config, ... }:
     {
       networking.hostName = "nixostrop";
       nixpkgs.hostPlatform = "x86_64-linux";
@@ -32,8 +32,9 @@
       };
 
       #========  KERNEL
-      # NVIDIA desktop fits better with the LTS kernel
-      # boot.kernelPackages unset
+      #========  UNSTABLE
+      # trying unstable zen kernel branch for gaming performance on nvidia desktop
+      boot.kernelPackages = pkgs.UNSTABLE.linuxKernel.packages.linux_zen;
 
       #========  TOUCHPAD
       # services.libinput.enable unset

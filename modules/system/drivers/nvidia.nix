@@ -1,4 +1,5 @@
 #========  NVIDIA
+#========  UNSTABLE (inherits the unstable nixpkgs branch from the linux kernel in host config)
 { ... }:
 {
   flake.nixosModules.nvidia_drivers =
@@ -11,7 +12,7 @@
         powerManagement.enable = true;
         open = true; # supported for Ampere (RTX 3060 Ti)
         nvidiaSettings = true;
-        package = config.boot.kernelPackages.nvidiaPackages.stable;
+        package = config.boot.kernelPackages.nvidiaPackages.latest;
       };
 
       # hardware video decode
