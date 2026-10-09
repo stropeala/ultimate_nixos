@@ -2,7 +2,7 @@
 { ... }:
 {
   flake.nixosModules.lapstrop_configuration =
-    { pkgs, config, ... }:
+    { config, pkgs, ... }:
     {
       networking.hostName = "lapstrop";
       nixpkgs.hostPlatform = "x86_64-linux";

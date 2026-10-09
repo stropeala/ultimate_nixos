@@ -2,7 +2,7 @@
 { ... }:
 {
   flake.nixosModules.nixostrop_configuration =
-    { pkgs, config, ... }:
+    { config, pkgs, ... }:
     {
       networking.hostName = "nixostrop";
       nixpkgs.hostPlatform = "x86_64-linux";
@@ -32,9 +32,8 @@
       };
 
       #========  KERNEL
-      #========  UNSTABLE
-      # trying unstable zen kernel branch for gaming performance on nvidia desktop
-      boot.kernelPackages = pkgs.UNSTABLE.linuxKernel.packages.linux_zen;
+      # default nixpkgs stable branch linux kernel
+      boot.kernelPackages = pkgs.linuxPackages;
 
       #========  TOUCHPAD
       # services.libinput.enable unset

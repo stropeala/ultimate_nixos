@@ -37,7 +37,7 @@ in
       environment.sessionVariables = {
         XCURSOR_THEME = cursor_theme_name;
         XCURSOR_SIZE = toString cursor_size;
-        NIXOS_OZONE_WL = "1";
+        # NIXOS_OZONE_WL = "1"; # breaks steam overlay
       };
 
       home-manager.users.${config.my.user.name}.imports = [ self.homeModules.plasma_desktop ];
