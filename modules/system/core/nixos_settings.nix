@@ -32,7 +32,7 @@
 
       # alternative gc
       programs.nh = {
-        enable = true;
+        enable = false; # plasma taskbar icons bug is the worst thing ever!!
         clean = {
           enable = true;
           dates = "weekly";
