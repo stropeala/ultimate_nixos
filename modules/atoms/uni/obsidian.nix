@@ -118,7 +118,7 @@
             pdf-plus
             obsidian-latex-suite
             table-editor-obsidian
-            native-powerpoint-doc-editor
+            styled-ms-office-viewer
 
             # theme accent
             {
