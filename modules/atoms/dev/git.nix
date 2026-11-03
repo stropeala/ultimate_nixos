@@ -8,6 +8,7 @@
         git
         delta
         github-desktop
+        gh
       ];
 
       environment.etc."gitconfig".text = ''
