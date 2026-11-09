@@ -18,6 +18,7 @@ let
   look_and_feel = "org.kde.breeze.desktop";
 
   wallpaper = ../../../data/wallpapers/skyrim-night-wallpapers.png;
+  lockscreen_wallpaper = /home/lapstrop/Pictures/Wallpapers/skyrim-night-wallpapers-copy.png;
   avatar = ../../../data/avatar/yukikica.jpg;
 in
 {
@@ -122,7 +123,7 @@ in
         # appearance
         workspace = {
           # wallpaper
-          # wallpaper = wallpaper;
+          wallpaper = wallpaper;
 
           # plasma style
           theme = "breeze";
@@ -190,7 +191,7 @@ in
           passwordRequiredDelay = 5;
           appearance = {
             alwaysShowClock = true;
-            # wallpaper = wallpaper;
+            wallpaper = lockscreen_wallpaper;
           };
         };
 
