@@ -2,7 +2,6 @@
 {
   self,
   inputs,
-  config,
   ...
 }:
 let
@@ -23,7 +22,6 @@ let
   look_and_feel = "org.kde.breeze.desktop";
 
   wallpaper = ../../../data/wallpapers/skyrim-night-wallpapers.png;
-  lockscreen_wallpaper = "${config.home.homeDirectory}/Pictures/Wallpapers/skyrim-night-wallpapers-copy.png"; # using this because of a bug
   avatar = ../../../data/avatar/yukikica.jpg;
 in
 {
@@ -51,8 +49,12 @@ in
 
   #========  HOME-MANAGER module
   flake.homeModules.plasma_desktop =
-    { pkgs, ... }:
+    { pkgs, config, ... }:
     let
+      # using this because of a bug
+      lockscreen_wallpaper = "${config.home.homeDirectory}/Pictures/Wallpapers/skyrim-night-wallpapers-copy.png";
+
+      # catppuccin kde repo
       catppuccin_kde = pkgs.fetchFromGitHub {
         owner = "catppuccin";
         repo = "kde";
