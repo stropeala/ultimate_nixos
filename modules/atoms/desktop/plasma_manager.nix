@@ -1,5 +1,10 @@
 #========  PLASMA MANAGER
-{ self, inputs, ... }:
+{
+  self,
+  inputs,
+  config,
+  ...
+}:
 let
   # theme names
   flavor = "Mocha";
@@ -18,7 +23,7 @@ let
   look_and_feel = "org.kde.breeze.desktop";
 
   wallpaper = ../../../data/wallpapers/skyrim-night-wallpapers.png;
-  lockscreen_wallpaper = /home/lapstrop/Pictures/Wallpapers/skyrim-night-wallpapers-copy.png;
+  lockscreen_wallpaper = "${config.home.homeDirectory}/Pictures/Wallpapers/skyrim-night-wallpapers-copy.png"; # using this because of a bug
   avatar = ../../../data/avatar/yukikica.jpg;
 in
 {
