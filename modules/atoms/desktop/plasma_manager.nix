@@ -21,8 +21,8 @@ let
 
   look_and_feel = "org.kde.breeze.desktop";
 
-  wallpaper = ../../../data/wallpapers/skyrim-night-wallpapers.png;
-  avatar = ../../../data/avatar/yukikica.jpg;
+  repo_wallpaper = ../../../data/wallpapers/skyrim-night-wallpapers.png;
+  repo_avatar = ../../../data/avatar/yukikica.jpg;
 in
 {
   #========  NIXOS module
@@ -52,7 +52,8 @@ in
     { pkgs, config, ... }:
     let
       # using this because of a bug
-      lockscreen_wallpaper = "${config.home.homeDirectory}/Pictures/Wallpapers/skyrim-night-wallpapers-copy.png";
+      # i need to manually copy it and put it in the path below for it to apply
+      manually_copied_wallpaper = "${config.home.homeDirectory}/Pictures/Wallpapers/skyrim-night-wallpapers-copy.png";
 
       # catppuccin kde repo
       catppuccin_kde = pkgs.fetchFromGitHub {
@@ -98,8 +99,8 @@ in
         platformTheme.name = "kde";
       };
 
-      home.file."Pictures/Wallpapers/skyrim-night-wallpapers.png".source = wallpaper;
-      home.file."Pictures/Avatars/yukikica.jpg".source = avatar;
+      home.file."Pictures/Wallpapers/skyrim-night-repo_wallpaper.png".source = repo_wallpaper;
+      home.file."Pictures/Avatars/yukikica.jpg".source = repo_avatar;
 
       xdg.dataFile."color-schemes/${color_scheme_name}.colors".source =
         "${catppuccin_kde}/generated/color-schemes/${color_scheme_name}.colors";
@@ -130,7 +131,7 @@ in
         # appearance
         workspace = {
           # wallpaper
-          wallpaper = wallpaper;
+          wallpaper = manually_copied_wallpaper;
 
           # plasma style
           theme = "breeze";
@@ -198,7 +199,7 @@ in
           passwordRequiredDelay = 5;
           appearance = {
             alwaysShowClock = true;
-            wallpaper = lockscreen_wallpaper;
+            wallpaper = manually_copied_wallpaper;
           };
         };
 
