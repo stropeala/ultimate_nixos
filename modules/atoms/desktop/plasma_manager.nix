@@ -53,7 +53,13 @@ in
     let
       # using this because of a bug
       # i need to manually copy it and put it in the path below for it to apply
+<<<<<<< HEAD
       manually_copied_wallpaper = "${config.home.homeDirectory}/Pictures/Wallpapers/skyrim-night-repo_wallpaper_copy.png";
+||||||| c04d1e2
+      lockscreen_wallpaper = "${config.home.homeDirectory}/Pictures/Wallpapers/skyrim-night-wallpapers-copy.png";
+=======
+      manually_copied_wallpaper = "${config.home.homeDirectory}/Pictures/Wallpapers/skyrim-night-wallpapers-copy.png";
+>>>>>>> 3d6e3be80b7f11a82318e81518d4f2f836f9e996
 
       # catppuccin kde repo
       catppuccin_kde = pkgs.fetchFromGitHub {
